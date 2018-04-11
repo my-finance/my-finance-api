@@ -1,0 +1,5 @@
+FROM openjdk:8-jre-alpine
+COPY ./target/my-finance-api-0.0.1-SNAPSHOT.jar /usr/src/my-finance/
+WORKDIR /usr/src/my-finance
+EXPOSE 8080
+CMD ["java", "-jar", "my-finance-api-0.0.1-SNAPSHOT.jar"]

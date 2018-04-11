@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+    db:
+        image: postgres
+    spring:
+        build:
+            context: .
+            dockerfile: Dockerfile.api
+        volumes:
+            - ./:/var/www/symfony
+        ports:
+            - 8080:8080
+        depends_on:
+            - db
