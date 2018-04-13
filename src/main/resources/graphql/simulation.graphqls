@@ -1,0 +1,15 @@
+type Simulation {
+	id: ID!
+	title: String!
+}
+
+type Query {
+	findAllSimulations: [Simulation]!
+	countSumulations: Long!
+}
+
+type Mutation {
+	newSimulation(title: String!): Simulation!
+	deleteSimulation(id: ID!): Boolean
+	updateSilulation(simulation: Simulation!): Simulation!
+}
